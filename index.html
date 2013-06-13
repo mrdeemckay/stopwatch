@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>StopWatch - Title </title>
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
+<!-- Load jQuery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+ 
+ 
+ 
+   
+<script type="text/javascript">
+
+var running = false;
+var startTime = null;
+var endTime = null;
+
+
+	
+	
+	
+function start()
+	{
+		running = true;
+		
+			var s= new Date().getTime();
+			startTime = s;
+			endTime = null;
+		
+		
+		
+	
+			var timer = setInterval( myFunction, 10);
+			function myFunction()
+			{
+				
+			var currentTime = new Date().getTime();
+			var cur = (currentTime - startTime) / 1000;
+			if ( running==true)
+				{
+					document.getElementById("time").innerHTML = cur;
+				}
+			}
+	
+	}
+	
+	
+function stop()
+	{
+		running = false;
+		clearInterval(timer);
+	}
+	function reset()
+	{
+		var running = false;
+		var startTime = null;
+		var endTime = null;
+		document.getElementById("time").innerHTML = '0.00';
+		clearInterval(timer);
+	}
+
+</script>
+</head>
+<body onload="getTime()" >
+
+<div class="container">
+	<div class="row">
+		<div class="twelvecol">Stopwatch</div>
+	</div>
+	<div class="row">
+		<div class="twelvecol"><span id="time">0.00</span><div>
+		<br />
+	</div>
+	<div class="row">
+		<div class="sixcol"><button onclick="start()">Go</button> <button onclick="stop()" >Stop</button> <button onclick="reset()">Reset</button></div> 
+		<div class="sixcol last"></div>
+	</div>
+	
+</div>
+
+</body>
+</html>
