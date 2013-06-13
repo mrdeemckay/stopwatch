@@ -5,11 +5,12 @@
 	body {
 		
 	}
-	.container {width:350px !important;color:#fff; background-color:#000;
+	
+	.container {margin-top:-20px !important;color:#fff; background-color:#000;
 	}
 	button {width:60px; height:25px; background-color:#32A5CF; border-left:0.5px; border-color:#fff; margin-bottom:20px;}
-	#time {font-size:80px;}
-
+	#time {font-size:80px; height:120px;}
+	.timeDiv {height:180px; margin-top:30px;}
 /* ============================= */
 /* ! Layout for mobile version   */
 /* ============================= */

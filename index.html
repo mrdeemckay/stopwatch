@@ -51,11 +51,27 @@ function start()
 	
 	}
 	
-	
+	 // alert dialog dismissed
+    function alertDismissed() {
+       navigator.notification.alert(
+            'No really He is!!',  // message
+            alertDismissed,         // callback
+            'Im Done Here',            // title
+            'Done'                  // buttonName
+        );
+    }
 function stop()
 	{
 		running = false;
 		clearInterval(timer);
+		
+			navigator.notification.alert(
+            'Barry Saunders Is Queer!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+		
 	}
 	function reset()
 	{
@@ -75,7 +91,7 @@ function stop()
 		<div class="twelvecol">Stopwatch</div>
 	</div>
 	<div class="row">
-		<div class="twelvecol"><span id="time">0.00</span><div>
+		<div class="twelvecol timeDiv"><span id="time">0.00</span><div>
 		<br />
 	</div>
 	<div class="row">
