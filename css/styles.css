@@ -3,14 +3,16 @@
 /* ============================== */
 
 	body {
-		
+		 background-color:#fff; font-family:roboto, Segoe UI Light;margin:0;padding:0;top:0;
 	}
+	.top { background-color:#DDDDDD;width:100%; margin-top:0px; position:fixed;}
+	.conttainer {margin-top:0px !important;color:#000;}
+	button {width:48%; height:35px; background-color:#CECECE; border:0;  margin-bottom:20px; border-radius:2px; }
+	button:active {background-color:#5AC2E9;}
+	.go button {width:98%; margin-bottom:5px;margin-left:4px;}
 	
-	.container {margin-top:-20px !important;color:#fff; background-color:#000;
-	}
-	button {width:60px; height:25px; background-color:#32A5CF; border-left:0.5px; border-color:#fff; margin-bottom:20px;}
-	#time {font-size:80px; height:120px;}
-	.timeDiv {height:180px; margin-top:30px;}
+	#time {font-size:80px; line-height:120px;height:120px;width:100%;position:relative; margin-left:20%;}
+	.timeDiv {height:100px; width:300px; margin-top:30px;margin-left:-150px; left:50%; position:relative; }
 /* ============================= */
 /* ! Layout for mobile version   */
 /* ============================= */
