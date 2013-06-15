@@ -1,4 +1,1 @@
-
-
-        <plugin name="Notification" value="org.apache.cordova.Notification"/>
-
+<plugin name="Notification" value="org.apache.cordova.Notification"/>
