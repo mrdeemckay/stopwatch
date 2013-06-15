@@ -1,4 +1,4 @@
-   <plugin name="Notification" value="org.apache.cordova.Notification"/>
+
 <?xml version="1.0" encoding="utf-8"?>
 <cordova>
     <access origin=".*"/>
