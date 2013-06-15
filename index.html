@@ -54,28 +54,24 @@ function start()
 	
 	 // alert dialog dismissed
     function alertDismissed() {
-       navigator.notification.alert(
-            'No really He is!!',  // message
-            alertDismissed,         // callback
-            'Im Done Here',            // title
-            'Done'                  // buttonName
-        );
+       
     }
 function stop()
 	{
 		running = false;
 		clearInterval(timer);
 		
-			
+		
 	}
-function showAlert(){
-	navigator.notification.alert(
+	function showAlert(){
+navigator.notification.alert(
             'Barry Saunders Is Queer!',  // message
             alertDismissed,         // callback
             'Game Over',            // title
             'Done'                  // buttonName
-        );
+        );	
 		}
+
 	function reset()
 	{
 		var running = false;
@@ -99,7 +95,8 @@ function showAlert(){
 	</div>
 	<div class="">
 		<div class="buttons go"><button onclick="start()">Go</button> </div> 
-		<div class="buttons"><button onclick="stop(); showAlert(); return false; "style="margin-left:4px;">Stop</button> <button onclick="reset()">Reset</button></div>
+		<div class="buttons"><button onclick="stop(); "style="margin-left:4px;">Stop</button> <button onclick="reset()">Reset</button></div>
+		<div class="buttons go"><button onclick="showAlert(); return false;">Alert</button> </div> 
 	</div>
 	
 </div>
