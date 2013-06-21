@@ -6,46 +6,43 @@
 
 <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
 
-	<!-- 1140px Grid styles for IE -->
-	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+	
 
-	<!-- The 1140px Grid - http://cssgrid.net/ -->
-	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
-<!-- Load jQuery -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
- <script type="text/javascript" charset="utf-8" src="js/cordova-2.7.0.js"></script>
+ <!-- <script type="text/javascript" charset="utf-8" src="js/cordova-2.7.0.js"></script> -->
  
  
    
 <script type="text/javascript">
 document.addEventListener("deviceready", onDeviceReady, false);
 
-var running = false;
-			var startTime = null;
-			var endTime = null;
 
 	
 	function onDeviceReady() {
-        
+        var running = false;
+			var startTime = null;
+			var endTime = null;
+
     }
+	
 	
 function start()
 	{
 		running = true;
 			var d = new Date();
 			var s = d.getTime();
-			startTime = s;
+			window.startTime= s;
 			endTime = null;
 		
-		
+			document.getElementById("stop").style.display = 'block';
+				document.getElementById("go").style.display = 'none';
 		
 	
-			var timer = setInterval( myFunction, 1);
-			function myFunction()
+			var timer = setInterval( timeDisp, 100);
+			function timeDisp()
 			{
 				
-			var currentTime = new Date().getTime();
-			var cur = (currentTime - startTime) / 1000;
+			window.currentTime = new Date().getTime();
+			window.cur = (currentTime - startTime) / 1000;
 			if ( running==true)
 				{
 					document.getElementById("time").innerHTML = cur;
@@ -54,49 +51,82 @@ function start()
 	
 	}
 	
-	 // alert dialog dismissed
-    function alertDismissed() {
-       
-    }
 function stop()
 	{
 		running = false;
-		
+		document.getElementById("stop").style.display = 'none';
+				document.getElementById("go").style.display = 'block';
 	}
-	function showAlert(){
-navigator.notification.alert(
-            'Barry Saunders Is Queer!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );	
-		}
+	
 
 	function reset()
 	{
-		var running = false;
+		 running = false;
 		var startTime = null;
 		var endTime = null;
 		document.getElementById("time").innerHTML = '0.000';
-		
+		document.getElementById("stop").style.display = 'none';
+				document.getElementById("go").style.display = 'block';
+		document.getElementById("lapDiv").innerHTML = null;
 	}
-
+ window.k = 1;
+	function lap()
+	{
+		
+		
+	
+		var lapDiv = document.getElementById("lapDiv");
+		var currentLaps = lapDiv.innerHTML;
+	
+	var newlaps = currentLaps +  "<div class='laps'><span class='lapNo'>" + k + "</span><span class='lapTime'>" + cur + "</span></div>";
+	
+		lapDiv.innerHTML = newlaps;
+		window.k = k + 1;
+	}
+	
+	var clk = document.getElementById("clk");
+	var lps = document.getElementById("lapDiv");
+function showClock()
+	{
+		var clk = document.getElementById("clk");
+	var lps = document.getElementById("lapDiv");
+		clk.style.display= "block";
+		lps.style.display= "none";
+	}
+function showLaps()
+	{
+		var clk = document.getElementById("clk");
+	var lps = document.getElementById("lapDiv");
+		clk.style.display= "none";
+		lps.style.display= "block";
+	}
 </script>
 </head>
 <body  >
 
 <div class="conttainer">
 	<div class="top">
-		<div class="title">sdfd</div>
+		<div class="top_left"><<</div>
+		<div class="top_mid">Stopwatch 2.0</div>
+		<div class="top_right">Home</div>
 	</div>
-	<div class="">
-		<div class="twelvecol timeDiv last"><span id="time">0.000</span></div>
+	<div class="nav_bar">
+		<div class="nav_left" ><center><a onclick="showClock()" >StopWatch</a></center></div>
+		<div class="nav_mid"><center><a onclick="showLaps()" >Laps</a></center></div>
+	
+	</div>
+	<div class="stopwatch" id="clk">
+		<div class="timeDiv" ><span id="time">0.000</span></div>
 		<br />
 	</div>
-	<div class="">
-		<div class="buttons go"><button onclick="start()">Go</button> </div> 
-		<div class="buttons"><button onclick="stop(); "style="margin-left:4px;">Stop</button> <button onclick="reset()">Reset</button></div>
-		<div class="buttons go"><button onclick="showAlert(); return false;">Alert</button> </div> 
+	<div class="laps" id="lapDiv">
+	</div>
+	<div class="act">
+		<div class="go" id="go"><a onclick="start()"><center>Go</center></a> </div> 
+		<div class="go" id="stop"><a onclick="stop();"><center>Stop</center></a></div>
+			<div class="reset"><a onclick="reset()"><center>Reset</center></a></div>
+			<div class="lap"><a href="javascript:lap();" ><center>Lap</center></a></div>
+		
 	</div>
 	
 </div>

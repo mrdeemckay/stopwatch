@@ -3,17 +3,38 @@
 /* ============================== */
 
 	body {
-		 background-color:#fff; font-family:roboto, Segoe UI Light;margin:0px;padding:0;top:0;
+		 background-color:#fff; font-family:roboto, Segoe UI Light;top:0;margin:0;padding:0px;
 	}
-	.top { background-color:#DDDDDD;width:100%; margin-top:0px; position:fixed;}
+	.top { background-color:#DDDDDD;width:100%; margin-top:-0px; position:fixed; height:28px;}
 	.conttainer {margin-top:0px !important;color:#000;}
-	button {width:48%; height:35px; background-color:#CECECE; border:0;  margin-bottom:20px; border-radius:2px; }
-	button:active {background-color:#5AC2E9;}
-	.go button {width:98%; margin-bottom:5px;margin-left:4px;}
 	
+	.act { width:100%; background-color:#CECECE; position:relative; height: 25px !important; }
+	.act a{height:35px; }
+	.act a:active {background-color:#5AC2E9;}
+	.act .go {width:40%; float:left;}
+	.act .reset{width:30%; float:left;}
+	.act #stop {display:none;}
+	.act .lap { width:30%; float:left;}
+	.stopwatch { height:200px;}
 	#time {font-size:80px; line-height:120px;height:120px;width:100%;position:relative; margin-left:20%;}
 	.timeDiv {height:100px; width:300px; margin-top:30px;margin-left:-150px; left:50%; position:relative; }
-/* ============================= */
+	
+	.top {position:relative;}
+	.top_left {width:10%; float:left; }
+	.top_mid{width:70%;float:left;}
+	.top_right { width:20%; float:left;}
+	
+	.nav_bar { margin-top:0px; position:fixed; width:100%;  margin-left:0%;  background-color:#DDDDDD;}
+	.nav_left, .nav_mid  {width:50%; float:left;position:relative;  background-color:#CECECE; }
+	
+	#lapDiv { display:none; height:200px; overflow:auto; margin-top:20px;}
+	.laps { margin:0;}
+	.laps:nth-child(even) {background: #dedede;}
+	.laps:nth-child(odd) {background: #cecece;}
+	
+	span.lapNo {width:20%; margin-left:5%; color:#999}
+	span.lapTime {width:70%; margin-left:5%;}
+
 /* ! Layout for mobile version   */
 /* ============================= */
 
